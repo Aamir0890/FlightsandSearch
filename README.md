@@ -14,3 +14,5 @@
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
+
+  "once you have added the json gile just got to git and write `npx sequelize db:create`"
