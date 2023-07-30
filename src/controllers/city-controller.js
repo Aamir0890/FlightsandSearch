@@ -1,22 +1,25 @@
-const {CityService}=require("../services/index")
+const  {CityService}=require("../services/index")
 
 
-const cityService=new CityService();
+const cityService= new CityService();
+
 
 //POST
 //data->req.body
-
+ 
 const create=async(req,res)=>{
     try{
-         const city=await cityService.create(req.body) 
+         const city=await cityService.createCity(req.body) 
          return res.status(201).json({
             data:city,
             success:true,
-            message:"Seccessfully created a city",
+            message:"Successfully created a city",
             error:{}
          })
-    }catch(error){
-        console.log(error)
+    } catch(error){
+        console.log(error);
+
+
         return res.status(500).json({
             data:{},
             success:false,
@@ -32,7 +35,7 @@ const destroy=async(req,res)=>{
         return res.status(200).json({
            data:response,
            success:true,
-           message:"Seccessfully deleted a city",
+           message:"Successfully deleted a city",
            error:{}
         })  
     }catch(error){
@@ -45,15 +48,18 @@ const destroy=async(req,res)=>{
         })
     }
 }
-const get=async(req,res)=>{
+
+
+const get= async (req,res)=>{
     try{
         const response=await cityService.getCity(req.params.id) 
         return res.status(200).json({
            data:response,
            success:true,
-           message:"Seccessfully deleted a city",
+           message:"Successfully got the city",
            error:{}
         })   
+        
     }catch(error){
         
         console.log(error)
@@ -70,7 +76,7 @@ const get=async(req,res)=>{
 
 const update=async(req,res)=>{
     try{
-        const response=await cityService.updateCitu(req.params.id,req.body) 
+        const response=await cityService.updateCity(req.params.id,req.body) 
         return res.status(200).json({
            data:response,
            success:true,

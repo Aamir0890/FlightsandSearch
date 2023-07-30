@@ -11,6 +11,7 @@ class CityService{
         return city;
     }catch(error){
         console.log("Something went wrong at service layer")
+        throw {error}
     }
     }
 
@@ -20,6 +21,7 @@ class CityService{
                return response;
         }catch(error){
             console.log("Something went wrong at service layer")
+            throw {error}
         }
     }
 
@@ -31,16 +33,19 @@ class CityService{
             console.log("Something went wrong at service layer")
         }
     }
+
     async getCity(cityId){
         try{
-     const city=await this.cityRepository.getCity(cityId)
-     return city;
+           const city= await this.cityRepository.getCity(cityId)
+           return city;
+           
         }catch(error){
             console.log("Something went wrong at service layer")
         }
     }
 
 }
+
 
 module.exports= CityService;
 

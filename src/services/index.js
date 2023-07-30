@@ -1,3 +1,4 @@
-const CityService = require("./city-services");
 
-module.exports=CityService
+module.exports={
+    CityService:require('./city-services')
+}
