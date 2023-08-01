@@ -35,9 +35,22 @@
  -One airport can have many flights ,but a flight belongs to one airport
 
 
+
 ##Flight Table
 
 -id -unique- to identify the flights
+
+##Tables
+
+
+### City -> id,name,created_at,updated_at
+
+
+### Airport -> id,name,adress,city_id,created_at,updated_at
+  RelationsShip -> City has many Airports and Airport belongs to a city(one to many)
+
+npx sequelize model:generate Airport attributes name:String,address:String,cityId:Integer
+
 
 
 
