@@ -1,5 +1,9 @@
 # Welcome tho flight_service_booking project
 
+Developed a robust microservices architecture for the Flight and Search service using Node.js and Express,
+with separate services for authorization, flight booking, flight search, and email notifications.
+
+Each service is hosted on different server and are communicating through http calls.
 ## Project Setup
 -clone the git repository
 
